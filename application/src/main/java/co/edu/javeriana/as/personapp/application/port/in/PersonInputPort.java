@@ -10,7 +10,8 @@ import co.edu.javeriana.as.personapp.domain.Phone;
 import co.edu.javeriana.as.personapp.domain.Study;
 
 @Port
-public interface PersonInputPort {
+public interface PersonInputPort
+{
 	
 	public void setPersintence(PersonOutputPort personPersintence);
 	
