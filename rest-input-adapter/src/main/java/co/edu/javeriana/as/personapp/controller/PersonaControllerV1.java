@@ -28,14 +28,16 @@ public class PersonaControllerV1 {
 	
 	@ResponseBody
 	@GetMapping(path = "/{database}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public List<PersonaResponse> personas(@PathVariable String database) {
-		log.info("Into personas REST API");
+	public List<PersonaResponse> personas(@PathVariable String database)
+	{
+		log.info("Info personas REST API");
 			return personaInputAdapterRest.historial(database.toUpperCase());
 	}
 	
 	@ResponseBody
 	@PostMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public PersonaResponse crearPersona(@RequestBody PersonaRequest request) {
+	public PersonaResponse crearPersona(@RequestBody PersonaRequest request)
+	{
 		log.info("esta en el metodo crearTarea en el controller del api");
 		return personaInputAdapterRest.crearPersona(request);
 	}

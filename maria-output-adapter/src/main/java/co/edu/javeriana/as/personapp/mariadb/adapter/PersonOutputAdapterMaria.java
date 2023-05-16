@@ -43,7 +43,7 @@ public class PersonOutputAdapterMaria implements PersonOutputPort {
 
 	@Override
 	public List<Person> find() {
-		log.debug("Into find on Adapter MariaDB");
+		log.debug("Info find on Adapter MariaDB");
 		return personaRepositoryMaria.findAll().stream().map(personaMapperMaria::fromAdapterToDomain)
 				.collect(Collectors.toList());
 	}
