@@ -50,7 +50,7 @@ public class PersonaInputAdapterRest {
 	}
 
 	public List<PersonaResponse> historial(String database) {
-		log.info("Into historial PersonaEntity in Input Adapter");
+		log.info("Info historial PersonaEntity in Input Adapter");
 		try {
 			if(setPersonOutputPortInjection(database).equalsIgnoreCase(DatabaseOption.MARIA.toString())){
 				return personInputPort.findAll().stream().map(personaMapperRest::fromDomainToAdapterRestMaria)
