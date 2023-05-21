@@ -49,6 +49,11 @@ public class ProfesionEntity implements Serializable {
 		this.id = id;
 		this.nom = nom;
 	}
+	public ProfesionEntity(Integer id, String nom,String des) {
+		this.id = id;
+		this.nom = nom;
+		this.des = des;
+	}
 
 	public Integer getId() {
 		return id;

@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import co.edu.javeriana.as.personapp.common.annotations.Mapper;
-import co.edu.javeriana.as.personapp.domain.Profession;
+import co.edu.javeriana.as.personapp.domain.Profesion;
 import co.edu.javeriana.as.personapp.domain.Study;
 import co.edu.javeriana.as.personapp.mariadb.entity.EstudiosEntity;
 import co.edu.javeriana.as.personapp.mariadb.entity.ProfesionEntity;
@@ -18,12 +18,12 @@ public class ProfesionMapperMaria {
 	@Autowired
 	private EstudiosMapperMaria estudiosMapperMaria;
 
-	public ProfesionEntity fromDomainToAdapter(Profession profession) {
+	public ProfesionEntity fromDomainToAdapter(Profesion profesion) {
 		ProfesionEntity profesionEntity = new ProfesionEntity();
-		profesionEntity.setId(profession.getIdentification());
-		profesionEntity.setNom(profession.getName());
-		profesionEntity.setDes(validateDes(profession.getDescription()));
-		profesionEntity.setEstudios(validateEstudios(profession.getStudies()));
+		profesionEntity.setId(profesion.getIdentification());
+		profesionEntity.setNom(profesion.getName());
+		profesionEntity.setDes(validateDes(profesion.getDescription()));
+		profesionEntity.setEstudios(validateEstudios(profesion.getStudies()));
 		return profesionEntity;
 	}
 
@@ -37,13 +37,13 @@ public class ProfesionMapperMaria {
 				: new ArrayList<EstudiosEntity>();
 	}
 
-	public Profession fromAdapterToDomain(ProfesionEntity profesionEntity) {
-		Profession profession = new Profession();
-		profession.setIdentification(profesionEntity.getId());
-		profession.setName(profesionEntity.getNom());
-		profession.setDescription(validateDescription(profesionEntity.getDes()));
-		profession.setStudies(validateStudies(profesionEntity.getEstudios()));
-		return profession;
+	public Profesion fromAdapterToDomain(ProfesionEntity profesionEntity) {
+		Profesion profesion = new Profesion();
+		profesion.setIdentification(profesionEntity.getId());
+		profesion.setName(profesionEntity.getNom());
+		profesion.setDescription(validateDescription(profesionEntity.getDes()));
+		profesion.setStudies(validateStudies(profesionEntity.getEstudios()));
+		return profesion;
 	}
 
 	private String validateDescription(String des) {

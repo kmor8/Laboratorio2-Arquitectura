@@ -16,7 +16,7 @@ public class Study {
 	@NonNull
 	private Person person;
 	@NonNull
-	private Profession profession;
+	private Profesion profesion;
 	private LocalDate graduationDate;
 	private String universityName;
 }

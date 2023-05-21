@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import co.edu.javeriana.as.personapp.common.annotations.Mapper;
 import co.edu.javeriana.as.personapp.domain.Person;
-import co.edu.javeriana.as.personapp.domain.Profession;
+import co.edu.javeriana.as.personapp.domain.Profesion;
 import co.edu.javeriana.as.personapp.domain.Study;
 import co.edu.javeriana.as.personapp.mongo.document.EstudiosDocument;
 import co.edu.javeriana.as.personapp.mongo.document.PersonaDocument;
@@ -24,9 +24,9 @@ public class EstudiosMapperMongo {
 
 	public EstudiosDocument fromDomainToAdapter(Study study) {
 		EstudiosDocument estudio = new EstudiosDocument();
-		estudio.setId(validateId(study.getPerson().getIdentification(), study.getProfession().getIdentification()));
+		estudio.setId(validateId(study.getPerson().getIdentification(), study.getProfesion().getIdentification()));
 		estudio.setPrimaryPersona(validatePrimaryPersona(study.getPerson()));
-		estudio.setPrimaryProfesion(validatePrimaryProfesion(study.getProfession()));
+		estudio.setPrimaryProfesion(validatePrimaryProfesion(study.getProfesion()));
 		estudio.setFecha(validateFecha(study.getGraduationDate()));
 		estudio.setUniver(validateUniver(study.getUniversityName()));
 		return estudio;
@@ -40,8 +40,8 @@ public class EstudiosMapperMongo {
 		return person != null ? personaMapperMongo.fromDomainToAdapter(person) : new PersonaDocument();
 	}
 
-	private ProfesionDocument validatePrimaryProfesion(@NonNull Profession profession) {
-		return profession != null ? profesionMapperMongo.fromDomainToAdapter(profession) : new ProfesionDocument();
+	private ProfesionDocument validatePrimaryProfesion(@NonNull Profesion profesion) {
+		return profesion != null ? profesionMapperMongo.fromDomainToAdapter(profesion) : new ProfesionDocument();
 	}
 
 	private LocalDate validateFecha(LocalDate graduationDate) {
@@ -55,7 +55,7 @@ public class EstudiosMapperMongo {
 	public Study fromAdapterToDomain(EstudiosDocument estudiosDocument) {
 		Study study = new Study();
 		study.setPerson(personaMapperMongo.fromAdapterToDomain(estudiosDocument.getPrimaryPersona()));
-		study.setProfession(profesionMapperMongo.fromAdapterToDomain(estudiosDocument.getPrimaryProfesion()));
+		study.setProfesion(profesionMapperMongo.fromAdapterToDomain(estudiosDocument.getPrimaryProfesion()));
 		study.setGraduationDate(validateGraduationDate(estudiosDocument.getFecha()));
 		study.setUniversityName(validateUniversityName(estudiosDocument.getUniver()));
 		return null;

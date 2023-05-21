@@ -22,7 +22,8 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Adapter
-public class PersonaInputAdapterRest {
+public class PersonaInputAdapterRest
+{
 
 	@Autowired
 	@Qualifier("personOutputAdapterMaria")

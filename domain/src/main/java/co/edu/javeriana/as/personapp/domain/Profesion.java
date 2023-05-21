@@ -13,7 +13,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @RequiredArgsConstructor
-public class Profession {
+public class Profesion {
 	@NonNull
 	private Integer identification;
 	@NonNull
