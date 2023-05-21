@@ -54,11 +54,12 @@ public class PersonaEntity implements Serializable {
 		this.cc = cc;
 	}
 
-	public PersonaEntity(Integer cc, String nombre, String apellido, Character genero) {
+	public PersonaEntity(Integer cc, String nombre, String apellido, Character genero,Integer edad) {
 		this.cc = cc;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.genero = genero;
+		this.edad= edad;
 	}
 
 	public Integer getCc() {
@@ -139,8 +140,8 @@ public class PersonaEntity implements Serializable {
 
 	@Override
 	public String toString() {
-		return "PersonaEntity [cc=" + cc + ", nombre=" + nombre + ", apellido=" + apellido + ", genero=" + genero + ", edad="
-				+ edad + "]";
+		return "cc=" + cc + ", nombre=" + nombre + ", apellido=" + apellido + ", genero=" + genero + ", edad="
+				+ edad ;
 	}
 
 }

@@ -32,7 +32,8 @@ public class MenuPrincipal {
         this.keyboard = new Scanner(System.in);
     }
 
-	public void inicio() {
+	public void inicio()
+	{
 		
 		//personaMenu = new PersonaMenu(personaInputAdapterCli);
 		boolean isValid = false;

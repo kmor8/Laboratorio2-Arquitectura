@@ -6,7 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="8b2bb084-63f3-46e8-a435-4a0e2e09ea19" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rest-input-adapter/src/main/java/co/edu/javeriana/as/personapp/adapter/PersonaInputAdapterRest.java" beforeDir="false" afterPath="$PROJECT_DIR$/rest-input-adapter/src/main/java/co/edu/javeriana/as/personapp/adapter/PersonaInputAdapterRest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cli-input-adapter/src/main/java/co/edu/javeriana/as/personapp/terminal/adapter/PersonaInputAdapterCli.java" beforeDir="false" afterPath="$PROJECT_DIR$/cli-input-adapter/src/main/java/co/edu/javeriana/as/personapp/terminal/adapter/PersonaInputAdapterCli.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cli-input-adapter/src/main/java/co/edu/javeriana/as/personapp/terminal/menu/MenuPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/cli-input-adapter/src/main/java/co/edu/javeriana/as/personapp/terminal/menu/MenuPrincipal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cli-input-adapter/src/main/java/co/edu/javeriana/as/personapp/terminal/menu/PersonaMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/cli-input-adapter/src/main/java/co/edu/javeriana/as/personapp/terminal/menu/PersonaMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cli-input-adapter/target/classes/co/edu/javeriana/as/personapp/terminal/adapter/PersonaInputAdapterCli.class" beforeDir="false" afterPath="$PROJECT_DIR$/cli-input-adapter/target/classes/co/edu/javeriana/as/personapp/terminal/adapter/PersonaInputAdapterCli.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cli-input-adapter/target/classes/co/edu/javeriana/as/personapp/terminal/menu/MenuPrincipal.class" beforeDir="false" afterPath="$PROJECT_DIR$/cli-input-adapter/target/classes/co/edu/javeriana/as/personapp/terminal/menu/MenuPrincipal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cli-input-adapter/target/classes/co/edu/javeriana/as/personapp/terminal/menu/PersonaMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/cli-input-adapter/target/classes/co/edu/javeriana/as/personapp/terminal/menu/PersonaMenu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/domain/src/main/java/co/edu/javeriana/as/personapp/domain/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/domain/src/main/java/co/edu/javeriana/as/personapp/domain/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/persona.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/persona.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maria-output-adapter/src/main/java/co/edu/javeriana/as/personapp/mariadb/entity/PersonaEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/maria-output-adapter/src/main/java/co/edu/javeriana/as/personapp/mariadb/entity/PersonaEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maria-output-adapter/target/classes/co/edu/javeriana/as/personapp/mariadb/entity/PersonaEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/maria-output-adapter/target/classes/co/edu/javeriana/as/personapp/mariadb/entity/PersonaEntity.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +35,8 @@
     </option>
     <option name="myId2Visible">
       <map>
-        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
-        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
         <entry key="com.haulmont.jpb.jpaStructure" value="false" />
       </map>
     </option>
