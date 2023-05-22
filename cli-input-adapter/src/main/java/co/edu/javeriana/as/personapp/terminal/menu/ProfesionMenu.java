@@ -30,11 +30,11 @@ public class ProfesionMenu {
                         isValid = true;
                         break;
                     case PERSISTENCIA_MARIADB:
-                        profesionInputAdapterCli.setProfessionOutputPortInjection("MARIA");
+                        profesionInputAdapterCli.setProfesionOutputPortInjection("MARIA");
                         menuOpciones(profesionInputAdapterCli,keyboard);
                         break;
                     case PERSISTENCIA_MONGODB:
-                        profesionInputAdapterCli.setProfessionOutputPortInjection("MONGO");
+                        profesionInputAdapterCli.setProfesionOutputPortInjection("MONGO");
                         menuOpciones(profesionInputAdapterCli,keyboard);
                         break;
                     default:

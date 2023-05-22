@@ -17,6 +17,7 @@ public class MenuPrincipal {
 	//Beans
 	@Autowired
 	private PersonaInputAdapterCli personaInputAdapterCli;
+	@Autowired
 	private ProfesionInputAdapterCli profesionInputAdapterCli;
 
 	private static final int SALIR = 0;
@@ -38,7 +39,6 @@ public class MenuPrincipal {
 
 	public void inicio()
 	{
-		
 		//personaMenu = new PersonaMenu(personaInputAdapterCli);
 		boolean isValid = false;
 		do {
@@ -54,8 +54,6 @@ public class MenuPrincipal {
 				break;
 			case MODULO_PROFESION:
 				profesionMenu.iniciarMenu(profesionInputAdapterCli,keyboard);
-				log.warn("Implementar Menu");
-
 				log.info("volvio");
 				break;
 			case MODULO_TELEFONO:

@@ -1,21 +1,23 @@
 package co.edu.javeriana.as.personapp.terminal.adapter;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
+import co.edu.javeriana.as.personapp.mariadb.entity.ProfesionEntity;
+import co.edu.javeriana.as.personapp.mariadb.mapper.ProfesionMapperMaria;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import co.edu.javeriana.as.personapp.domain.Profesion;
 import co.edu.javeriana.as.personapp.application.port.in.ProfesionInputPort;
 import co.edu.javeriana.as.personapp.application.port.out.ProfesionOutputPort;
 import co.edu.javeriana.as.personapp.application.usecase.ProfesionUseCase;
 import co.edu.javeriana.as.personapp.common.annotations.Adapter;
 import co.edu.javeriana.as.personapp.common.exceptions.InvalidOptionException;
 import co.edu.javeriana.as.personapp.common.setup.DatabaseOption;
-import co.edu.javeriana.as.personapp.domain.Profesion;
-import co.edu.javeriana.as.personapp.mariadb.entity.ProfesionEntity;
-import co.edu.javeriana.as.personapp.mariadb.mapper.ProfesionMapperMaria;
 import co.edu.javeriana.as.personapp.terminal.mapper.ProfesionMapperCli;
 import co.edu.javeriana.as.personapp.terminal.model.ProfesionModelCli;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import java.util.List;
-import java.util.stream.Collectors;
+
 
 @Slf4j
 @Adapter
@@ -34,7 +36,7 @@ public class ProfesionInputAdapterCli
 
     ProfesionInputPort profesionInputPort;
 
-    public void setProfessionOutputPortInjection(String dbOption) throws InvalidOptionException
+    public void setProfesionOutputPortInjection(String dbOption) throws InvalidOptionException
     {
         if (dbOption.equalsIgnoreCase(DatabaseOption.MARIA.toString())) {
             profesionInputPort = new ProfesionUseCase(profesionOutputPortMaria);
@@ -61,7 +63,7 @@ public class ProfesionInputAdapterCli
 
     public void crearP(int idn,String nombre,String des)
     {
-        log.info("ProfessionEntity Create in Input Adapter");
+        log.info("ProfesionEntity Create in Input Adapter");
         ProfesionEntity nueva = new ProfesionEntity(idn,nombre,des);
         ProfesionMapperMaria map = new ProfesionMapperMaria();
         profesionInputPort.create(map.fromAdapterToDomain(nueva));
@@ -70,7 +72,7 @@ public class ProfesionInputAdapterCli
 
     public void borrarP(int cc)
     {
-        log.info("ProfessionEntity Delete in Input Adapter");
+        log.info("ProfesionEntity Delete in Input Adapter");
         try{
             profesionInputPort.drop(cc);
         }catch (Exception e){
@@ -98,7 +100,7 @@ public class ProfesionInputAdapterCli
             profesionInputPort.edit(idn,profesion);
         }catch (Exception e)
         {
-
+            System.out.println("");
         }
 
     }

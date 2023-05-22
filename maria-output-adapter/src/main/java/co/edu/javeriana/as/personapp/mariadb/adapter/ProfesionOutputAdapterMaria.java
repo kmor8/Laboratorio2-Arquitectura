@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Slf4j
-@Adapter("professionOutputAdapterMaria")
+@Adapter("profesionOutputAdapterMaria")
 @Transactional
 public class ProfesionOutputAdapterMaria implements ProfesionOutputPort
 {

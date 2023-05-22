@@ -18,12 +18,12 @@ public class ProfesionMapperMongo {
 	@Autowired
 	private EstudiosMapperMongo estudiosMapperMongo;
 
-	public ProfesionDocument fromDomainToAdapter(Profesion profession) {
+	public ProfesionDocument fromDomainToAdapter(Profesion profesion) {
 		ProfesionDocument profesionDocument = new ProfesionDocument();
-		profesionDocument.setId(profession.getIdentification());
-		profesionDocument.setNom(profession.getName());
-		profesionDocument.setDes(validateDes(profession.getDescription()));
-		profesionDocument.setEstudios(validateEstudios(profession.getStudies()));
+		profesionDocument.setId(profesion.getIdentification());
+		profesionDocument.setNom(profesion.getName());
+		profesionDocument.setDes(validateDes(profesion.getDescription()));
+		profesionDocument.setEstudios(validateEstudios(profesion.getStudies()));
 		return profesionDocument;
 	}
 

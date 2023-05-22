@@ -15,11 +15,11 @@ public class ProfesionMapperRest
         return fromDomainToAdapterRest(profesion, "MongoDB");
     }
 
-    public ProfesionResponse fromDomainToAdapterRest(Profesion profession, String database) {
+    public ProfesionResponse fromDomainToAdapterRest(Profesion profesion, String database) {
         return new ProfesionResponse(
-                profession.getIdentification()+"",
-                profession.getName(),
-                profession.getDescription(),
+                profesion.getIdentification()+"",
+                profesion.getName(),
+                profesion.getDescription(),
                 database,
                 "OK");
     }

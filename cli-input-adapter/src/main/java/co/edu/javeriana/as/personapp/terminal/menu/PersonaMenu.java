@@ -70,7 +70,6 @@ public class PersonaMenu {
 					break;
 				case OPCION_VER_TODO:
 					personaInputAdapterCli.historial();
-
 					break;
 				case OPCION_CREAR_PERSONA:
 

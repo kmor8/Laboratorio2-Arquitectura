@@ -11,11 +11,11 @@ import java.util.List;
 @Port
 public interface ProfesionInputPort
 {
-    public void setPersintence(ProfesionOutputPort personPersintence);
+    public void setPersintence(ProfesionOutputPort profesionPersintence);
 
-    public Profesion create(Profesion profession);
+    public Profesion create(Profesion profesion);
 
-    public Profesion edit(Integer id, Profesion profession) throws NoExistException;
+    public Profesion edit(Integer id, Profesion profesion) throws NoExistException;
 
     public Boolean drop(Integer identification) throws NoExistException;
 
