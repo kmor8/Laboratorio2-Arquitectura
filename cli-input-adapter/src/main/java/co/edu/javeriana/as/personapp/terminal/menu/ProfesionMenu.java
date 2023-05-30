@@ -1,6 +1,7 @@
 package co.edu.javeriana.as.personapp.terminal.menu;
 
 import co.edu.javeriana.as.personapp.common.exceptions.InvalidOptionException;
+import co.edu.javeriana.as.personapp.domain.Profesion;
 import co.edu.javeriana.as.personapp.terminal.adapter.ProfesionInputAdapterCli;
 import lombok.extern.slf4j.Slf4j;
 import java.util.InputMismatchException;
@@ -18,6 +19,9 @@ public class ProfesionMenu {
     private static final int OPCION_CREAR_PROFESION=2;
     private static final int OPCION_BORRAR_PROFESION=3;
     private static final int OPCION_ACTUALIZAR_PROFESION=4;
+
+    private static final int UPDATE_NOMBRE=1;
+    private static final int UPDATE_DESCRIPCION=2;
 
     public void iniciarMenu(ProfesionInputAdapterCli profesionInputAdapterCli, Scanner keyboard) {
         boolean isValid = false;
@@ -60,49 +64,37 @@ public class ProfesionMenu {
                         profesionInputAdapterCli.historial();
                         break;
                     case OPCION_CREAR_PROFESION:
-/*
                         Scanner data = new Scanner(System.in);
 
-                        System.out.println("Ingrese el cc:");
-                        Integer cc = data.nextInt();
+                        System.out.println("Ingrese el id:");
+                        Integer id = data.nextInt();
                         data.nextLine();  // Agregar esta línea
 
                         System.out.println("Ingrese el nombre:");
                         String nombre = data.nextLine();
 
-                        System.out.println("Ingrese el apellido:");
-                        String apellido = data.nextLine();
-
-                        System.out.println("Ingrese el genero:");
-                        String line = data.nextLine();
-                        Character genero = line.charAt(0); // Obtener el primer carácter
-
-                        System.out.println("Ingrese la edad:");
-                        Integer edad = data.nextInt();
-                        data.nextLine();  // Agregar esta línea
+                        System.out.println("Ingrese la descripcion:");
+                        String des = data.nextLine();
 
                         System.out.println("Datos recolectados");
-
-                        personaInputAdapterCli.crearP(cc,nombre,apellido,genero,edad);
-*/
+                        profesionInputAdapterCli.crearP(id,nombre,des);
                         break;
 
                     case OPCION_BORRAR_PROFESION:
-                        /*Scanner data2 = new Scanner(System.in);
+                        Scanner data2 = new Scanner(System.in);
 
-                        System.out.println("Ingrese el cc de la persona a eliminar:");
+                        System.out.println("Ingrese el id de la profesion a eliminar:");
                         Integer deletecc = data2.nextInt();
                         data2.nextLine();  // Agregar esta línea
-
-                        personaInputAdapterCli.borrarP(deletecc);*/
+                        profesionInputAdapterCli.borrarP(deletecc);
 
                     case OPCION_ACTUALIZAR_PROFESION:
-                        /*
+
                         Scanner data3 = new Scanner(System.in);
-                        System.out.println("Ingrese el cc de la persona a editar:");
+                        System.out.println("Ingrese el id de la profesion a editar:");
                         Integer update = data3.nextInt();
                         data3.nextLine();  // Agregar esta línea
-                        menuOpcionesMod(personaInputAdapterCli,keyboard,update);*/
+                        menuOpcionesMod(profesionInputAdapterCli,keyboard,update);
 
                     default:
                         log.warn("La opción elegida no es válida.");
@@ -113,15 +105,14 @@ public class ProfesionMenu {
         } while (!isValid);
     }
 
-    private void menuOpcionesMod(ProfesionInputAdapterCli profesionInputAdapterCli,Scanner keyboard,Integer cc)
+    private void menuOpcionesMod(ProfesionInputAdapterCli profesionInputAdapterCli,Scanner keyboard,Integer id)
     {
         boolean isValid = false;
         do {
             try {
 
-                //Person up = personaInputAdapterCli.find(cc);
-
-                /*if(up.getIdentification()!=null)
+                Profesion up = profesionInputAdapterCli.find(id);
+                if(up.getIdentification()!=null)
                 {
                     mostrarMenuOpcionesMod();
                     int opcion = leerOpcion(keyboard);
@@ -132,37 +123,17 @@ public class ProfesionMenu {
                         case OPCION_REGRESAR_MOTOR_PERSISTENCIA:
                             isValid = true;
                             break;
-                        /*case UPDATE_NOMBRE:
+                        case UPDATE_NOMBRE:
                             System.out.println("Ingrese el nuevo nombre: ");
                             String name = data1.nextLine();
-                            up.setFirstName(name);
-                            personaInputAdapterCli.updateP(cc,up);
+                            up.setName(name);
+                            profesionInputAdapterCli.updateP(id,up);
                             break;
-                        case UPDATE_APELLIDO:
-                            System.out.println("Ingrese el nuevo apellido: ");
-                            String ape = data1.nextLine();
-                            up.setLastName(ape);
-                            personaInputAdapterCli.updateP(cc,up);
-                            break;
-
-                        case UPDATE_EDAD:
-                            System.out.println("Ingrese la nueva edad: ");
-                            Integer edad = data1.nextInt();
-                            up.setAge(edad);
-                            personaInputAdapterCli.updateP(cc,up);
-                            break;
-
-                        case UPDATE_GENERO:
-                            System.out.println("Ingrese el nuevo genero: ");
-                            String line = data1.nextLine();
-                            Gender gen = Gender.OTHER;
-                            if(line.equals("F"))
-                                gen = Gender.FEMALE;
-                            else if (line.equals("M"))
-                                gen = Gender.MALE;
-                            up.setGender(gen);
-                            personaInputAdapterCli.updateP(cc,up);
-
+                        case UPDATE_DESCRIPCION:
+                            System.out.println("Ingrese la nueva descripcion: ");
+                            String des = data1.nextLine();
+                            up.setDescription(des);
+                            profesionInputAdapterCli.updateP(id,up);
                             break;
 
                         default:
@@ -171,7 +142,7 @@ public class ProfesionMenu {
                 }
                 else{
                     isValid=true;
-                }*/
+                }
 
             } catch (InputMismatchException e) {
                 log.warn("Solo se permiten números.");
@@ -180,22 +151,20 @@ public class ProfesionMenu {
     }
     private void mostrarMenuOpciones() {
         System.out.println("----------------------");
-        System.out.println(OPCION_VER_TODO + " para ver todas las personas");
-        System.out.println(OPCION_CREAR_PROFESION+" para crear una persona");
-        System.out.println(OPCION_BORRAR_PROFESION+" para eliminar una persona");
-        System.out.println(OPCION_ACTUALIZAR_PROFESION+ " para modificar una persona");
+        System.out.println(OPCION_VER_TODO + " para ver todas las profesiones");
+        System.out.println(OPCION_CREAR_PROFESION+" para crear una profesion");
+        System.out.println(OPCION_BORRAR_PROFESION+" para eliminar una profesion");
+        System.out.println(OPCION_ACTUALIZAR_PROFESION+ " para modificar una profesion");
         System.out.println(OPCION_REGRESAR_MOTOR_PERSISTENCIA + " para regresar");
     }
 
     private void mostrarMenuOpcionesMod()
     {
         System.out.println("----------------------");
-        /*
+
         System.out.println(UPDATE_NOMBRE+" para modificar el nombre");
-        System.out.println(UPDATE_APELLIDO+" para modificar el apellido");
-        System.out.println(UPDATE_EDAD+" para modificar la edad");
-        System.out.println(UPDATE_GENERO+" para modificar el genero");
-        System.out.println(OPCION_REGRESAR_MOTOR_PERSISTENCIA + " para regresar");*/
+        System.out.println(UPDATE_DESCRIPCION+" para modificar las descripcion");
+        System.out.println(OPCION_REGRESAR_MOTOR_PERSISTENCIA + " para regresar");
     }
 
     private void mostrarMenuMotorPersistencia() {

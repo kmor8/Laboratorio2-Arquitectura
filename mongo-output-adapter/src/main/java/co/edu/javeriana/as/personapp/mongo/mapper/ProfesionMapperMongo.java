@@ -23,7 +23,7 @@ public class ProfesionMapperMongo {
 		profesionDocument.setId(profesion.getIdentification());
 		profesionDocument.setNom(profesion.getName());
 		profesionDocument.setDes(validateDes(profesion.getDescription()));
-		profesionDocument.setEstudios(validateEstudios(profesion.getStudies()));
+		//profesionDocument.setEstudios(validateEstudios(profesion.getStudies()));
 		return profesionDocument;
 	}
 
@@ -42,7 +42,7 @@ public class ProfesionMapperMongo {
 		profesion.setIdentification(profesionDocument.getId());
 		profesion.setName(profesionDocument.getNom());
 		profesion.setDescription(validateDescription(profesionDocument.getDes()));
-		profesion.setStudies(validateStudies(profesionDocument.getEstudios()));
+		//profesion.setStudies(validateStudies(profesionDocument.getEstudios()));
 		return profesion;
 	}
 

@@ -64,7 +64,7 @@ public class PersonaMapperMaria {
 		person.setLastName(personaEntity.getApellido());
 		person.setGender(validateGender(personaEntity.getGenero()));
 		person.setAge(validateAge(personaEntity.getEdad()));
-		person.setStudies(validateStudies(personaEntity.getEstudios()));
+		//person.setStudies(validateStudies(personaEntity.getEstudios()));
 		person.setPhoneNumbers(validatePhones(personaEntity.getTelefonos()));
 		return person;
 	}

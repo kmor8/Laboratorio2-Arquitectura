@@ -35,8 +35,8 @@ public class ProfesionEntity implements Serializable {
 	@Lob
 	@Column(length = 65535)
 	private String des;
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "profesion")
-	private List<EstudiosEntity> estudios;
+	//@OneToMany(cascade = CascadeType.ALL, mappedBy = "profesion")
+	//private List<EstudiosEntity> estudios;
 
 	public ProfesionEntity() {
 	}
@@ -79,13 +79,13 @@ public class ProfesionEntity implements Serializable {
 		this.des = des;
 	}
 
-	public List<EstudiosEntity> getEstudios() {
+	/*public List<EstudiosEntity> getEstudios() {
 		return estudios;
-	}
+	}*/
 
-	public void setEstudios(List<EstudiosEntity> estudiosList) {
+	/*public void setEstudios(List<EstudiosEntity> estudiosList) {
 		this.estudios = estudiosList;
-	}
+	}*/
 
 	@Override
 	public int hashCode() {

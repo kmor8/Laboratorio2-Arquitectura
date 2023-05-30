@@ -19,6 +19,6 @@ public class Profesion {
 	@NonNull
 	private String name;
 	private String description;
-	@ToString.Exclude
-	private List<Study> studies;
+	//@ToString.Exclude
+	//private List<Study> studies;
 }
