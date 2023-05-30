@@ -65,7 +65,6 @@ public class PersonaInputAdapterCli {
 		PersonaEntity nueva = new PersonaEntity(cc,nombre,apellido,genero,edad);
 		PersonaMapperMaria map = new PersonaMapperMaria();
 		personInputPort.create(map.fromAdapterToDomain(nueva));
-
 	}
 
 	public void borrarP(int cc)

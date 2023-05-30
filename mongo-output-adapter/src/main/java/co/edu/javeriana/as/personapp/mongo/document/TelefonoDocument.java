@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Document("telefono")
 public class TelefonoDocument {
 	@Id
-	private String id;
+	private String num;
 	private String oper;
 	@DocumentReference(lazy = true)
     private PersonaDocument primaryDuenio;

@@ -45,6 +45,11 @@ public class TelefonoEntity implements Serializable {
 		this.num = num;
 		this.oper = oper;
 	}
+	public TelefonoEntity(String num, String oper,PersonaEntity duenio) {
+		this.num = num;
+		this.oper = oper;
+		this.duenio=duenio;
+	}
 
 	public String getNum() {
 		return num;
